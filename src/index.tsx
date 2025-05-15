@@ -517,18 +517,13 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     document.addEventListener("mousedown", handleDragStartEvent, opts);
     document.addEventListener("mouseup", handleDragEndEvent, opts);
 
-    return () => {
-      console.log("cleanup");
-      controller.abort();
-    };
+    return () => controller.abort();
   }, [handleDragEndEvent, handleDragStartEvent, handleWheelEvent]);
 
   useEffect(() => {
     selectByValue(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, valueProp]);
-
-  console.log("render WheelPicker", valueProp);
 
   return (
     <div ref={containerRef} data-rwp style={{ height: containerHeight }}>
