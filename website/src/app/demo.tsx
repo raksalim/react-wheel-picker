@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import {
   WheelPicker,
   WheelPickerClassNames,
   WheelPickerOption,
   WheelPickerWrapper,
-} from "react-wheel-picker";
+} from "@ncdai/react-wheel-picker";
+import { useState } from "react";
 
 const createArray = (length: number, add = 0): WheelPickerOption[] =>
   Array.from({ length }, (_, i) => {
@@ -24,18 +24,27 @@ const meridiemOptions: WheelPickerOption[] = [
   { label: "PM", value: "PM" },
 ];
 
-export function Form() {
+const classNames: WheelPickerClassNames = {
+  optionItem: "text-muted-foreground",
+  highlightWrapper: "bg-accent text-accent-foreground",
+};
+
+export function Demo() {
   const [hour, setHour] = useState("8");
   const [minute, setMinute] = useState("30");
   const [meridiem, setMeridiem] = useState("PM");
 
-  const classNames: WheelPickerClassNames = {
-    optionItem: "text-muted-foreground",
-    highlightWrapper: "bg-accent text-accent-foreground",
-  };
-
   return (
-    <div className="p-4">
+    <div className="container mx-auto space-y-4 p-4">
+      <p className="text-center text-balance">
+        iOS-like wheel picker for React with smooth inertia scrolling and
+        infinite loop support.
+      </p>
+
+      <div className="mx-auto flex h-8 max-w-56 items-center justify-center text-lg font-semibold">
+        {hour.padStart(2, "0")}:{minute.padStart(2, "0")} {meridiem}
+      </div>
+
       <WheelPickerWrapper className="mx-auto max-w-56 rounded-xl border bg-background">
         <WheelPicker
           options={hourOptions}
@@ -58,10 +67,6 @@ export function Form() {
           classNames={classNames}
         />
       </WheelPickerWrapper>
-
-      <div>
-        {hour}:{minute} {meridiem}
-      </div>
     </div>
   );
 }

@@ -1,14 +1,7 @@
-import "react-wheel-picker/dist/style.css";
+import "@ncdai/react-wheel-picker/dist/style.css";
 
-import { ThemeSwitcher } from "@/components/theme-switcher";
-
-import { Form } from "./form";
+import { Demo } from "./demo";
 
 export default function Home() {
-  return (
-    <div className="p-4">
-      <Form />
-      <ThemeSwitcher />
-    </div>
-  );
+  return <Demo />;
 }
