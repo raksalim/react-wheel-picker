@@ -15,8 +15,8 @@ const options: WheelPickerOption[] = [
     value: "vite",
   },
   {
-    value: "Laravel",
-    label: "laravel",
+    label: "Laravel",
+    value: "laravel",
   },
   {
     label: "React Router",
