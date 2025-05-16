@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const ogImageUrl = "/og-image.png?v=250516";
+
 export const metadata: Metadata = {
   title: "React Wheel Picker",
   description:
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "React Wheel Picker",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@iamncdai", // Twitter username
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
 

@@ -2,6 +2,7 @@ import "@ncdai/react-wheel-picker/dist/style.css";
 
 import { Mark } from "@/components/mark";
 import { Button } from "@/components/ui/button";
+import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 import { MultiPickerDemo } from "./multi-picker-demo";
 import { SimplePickerDemo } from "./simple-picker-demo";
@@ -20,7 +21,7 @@ export default function Home() {
         with smooth inertia scrolling and infinite loop support.
       </p>
 
-      <div className="mb-8 flex justify-center">
+      <div className="mx-auto mb-8 grid grid-cols-2 gap-4 sm:w-sm">
         <Button asChild>
           <a
             href="https://chanhdai.com/blog/react-wheel-picker"
@@ -28,6 +29,16 @@ export default function Home() {
             rel="noopener"
           >
             Get Started
+          </a>
+        </Button>
+
+        <Button
+          variant="outline"
+          className="border-zinc-300 dark:border-zinc-700"
+          asChild
+        >
+          <a href={SOURCE_CODE_GITHUB_URL} target="_blank" rel="noopener">
+            GitHub
           </a>
         </Button>
       </div>
