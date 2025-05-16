@@ -1,15 +1,17 @@
-# react-wheel-picker
+# React Wheel Picker
 
 iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
+
+Check out the live demo: [react-wheel-picker.chanhdai.com](https://react-wheel-picker.chanhdai.com)
 
 ## Installation
 
 ```bash
-npm install @ncdai/react-wheel-picker
+pnpm add @ncdai/react-wheel-picker
 # or
 yarn add @ncdai/react-wheel-picker
 # or
-pnpm add @ncdai/react-wheel-picker
+npm install @ncdai/react-wheel-picker
 ```
 
 ## Anatomy
@@ -40,31 +42,24 @@ The core component that renders a single wheel of options. Each wheel picker con
 ```tsx
 <WheelPicker
   options={[
-    { label: "Option 1", value: "1" },
-    { label: "Option 2", value: "2" },
+    { label: "React", value: "react" },
+    { label: "Vue", value: "vue" },
+    { label: "Angular", value: "angular" },
   ]}
-  value="1"
-  onValueChange={(value) => {}}
 />
 ```
 
-> **Styling:** The component is unstyled by default. You can customize the appearance using the `classNames` prop to style:
->
-> - Individual options (`optionItem`)
-> - The highlight area (`highlightWrapper`)
-> - The highlighted option (`highlightItem`)
->
-> Check out the TailwindCSS example below to see how to style the component.
-
 ## Usage
 
-1. Import CSS:
+### Import CSS
 
 ```tsx
 import "@ncdai/react-wheel-picker/dist/style.css";
 ```
 
-2. Import components:
+This CSS file includes only the core layout for the wheel picker. For custom visuals, use the `classNames` prop as shown in the Tailwind CSS example below.
+
+### Import components
 
 ```tsx
 import {
@@ -75,69 +70,41 @@ import {
 } from "@ncdai/react-wheel-picker";
 ```
 
-3. Example with TailwindCSS:
+### Example with Tailwind CSS
 
 ```tsx
-const createArray = (length: number, add = 0): WheelPickerOption[] =>
-  Array.from({ length }, (_, i) => {
-    const value = i + add;
-    return {
-      label: value.toString().padStart(2, "0"),
-      value: value.toString(),
-    };
-  });
-
-const hourOptions = createArray(12, 1);
-const minuteOptions = createArray(60);
-const meridiemOptions: WheelPickerOption[] = [
-  { label: "AM", value: "AM" },
-  { label: "PM", value: "PM" },
+const options: WheelPickerOption[] = [
+  {
+    label: "React",
+    value: "react",
+  },
+  {
+    label: "Vue",
+    value: "vue",
+  },
+  {
+    label: "Angular",
+    value: "angular",
+  },
+  {
+    label: "Svelte",
+    value: "svelte",
+  },
 ];
 
 const classNames: WheelPickerClassNames = {
-  optionItem: "text-muted-foreground",
-  highlightWrapper: "bg-accent text-accent-foreground",
+  optionItem: "text-zinc-400",
+  highlightWrapper: "bg-zinc-100 text-zinc-950",
 };
 
-export function TimePicker() {
-  const [hour, setHour] = useState("8");
-  const [minute, setMinute] = useState("30");
-  const [meridiem, setMeridiem] = useState("PM");
-
+export function WheelPickerDemo() {
   return (
-    <div className="container mx-auto space-y-4 p-4">
-      <div className="mx-auto flex h-8 max-w-56 items-center justify-center text-lg font-semibold">
-        {hour.padStart(2, "0")}:{minute.padStart(2, "0")} {meridiem}
-      </div>
-
-      <WheelPickerWrapper className="mx-auto max-w-56 rounded-xl border bg-background">
-        <WheelPicker
-          options={hourOptions}
-          value={hour}
-          onValueChange={setHour}
-          infinite
-          classNames={classNames}
-        />
-        <WheelPicker
-          options={minuteOptions}
-          value={minute}
-          onValueChange={setMinute}
-          infinite
-          classNames={classNames}
-        />
-        <WheelPicker
-          options={meridiemOptions}
-          value={meridiem}
-          onValueChange={setMeridiem}
-          classNames={classNames}
-        />
-      </WheelPickerWrapper>
-    </div>
+    <WheelPickerWrapper className="max-w-56 rounded-md border border-zinc-200 bg-white shadow-xs">
+      <WheelPicker options={options} classNames={classNames} />
+    </WheelPickerWrapper>
   );
 }
 ```
-
-> View the complete source code at [https://github.com/ncdai/react-wheel-picker/tree/main/website](https://github.com/ncdai/react-wheel-picker/tree/main/website)
 
 ## API
 

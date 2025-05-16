@@ -27,11 +27,16 @@
     "type-check": "tsc --noEmit",
     "copy-assets": "cp -r ./src/style.css ./dist/style.css",
     "dev:website": "turbo run dev --filter=website...",
-    "lint": "eslint . --ext .ts,.tsx --ignore-pattern 'website/**'",
+    "prettier:check": "prettier --check .",
     "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "wheel picker",
+    "wheel",
+    "picker"
+  ],
   "author": "Nguyen Chanh Dai <dai@chanhdai.com>",
   "license": "MIT",
   "homepage": "https://react-wheel-picker.chanhdai.com",
