@@ -1,3 +1,8 @@
+export const SITE_INFO = {
+  name: "React Wheel Picker",
+  url: process.env.APP_URL || "https://react-wheel-picker.chanhdai.com",
+};
+
 export const SOURCE_CODE_GITHUB_URL =
   "https://github.com/ncdai/react-wheel-picker";
 

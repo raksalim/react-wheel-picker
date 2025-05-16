@@ -6,5 +6,8 @@
   "editor.colorDecorators": false,
   "files.associations": {
     "*.css": "tailwindcss"
-  }
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

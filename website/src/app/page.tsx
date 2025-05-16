@@ -1,5 +1,7 @@
 import "@ncdai/react-wheel-picker/dist/style.css";
 
+import Link from "next/link";
+
 import { Mark } from "@/components/mark";
 import { Button } from "@/components/ui/button";
 import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
@@ -23,13 +25,7 @@ export default function Home() {
 
       <div className="mx-auto mb-8 grid grid-cols-2 gap-4 sm:w-sm">
         <Button asChild>
-          <a
-            href="https://chanhdai.com/blog/react-wheel-picker"
-            target="_blank"
-            rel="noopener"
-          >
-            Get Started
-          </a>
+          <Link href="/docs/getting-started">Get Started</Link>
         </Button>
 
         <Button

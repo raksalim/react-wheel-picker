@@ -4,7 +4,9 @@ iOS-like wheel picker for React with smooth inertia scrolling and infinite loop 
 
 Check out the live demo: https://chanhdai.com/blog/react-wheel-picker
 
-## Installation
+## Usage
+
+To start using the library, install it in your project:
 
 ```bash
 pnpm add @ncdai/react-wheel-picker
@@ -12,54 +14,19 @@ pnpm add @ncdai/react-wheel-picker
 yarn add @ncdai/react-wheel-picker
 # or
 npm install @ncdai/react-wheel-picker
+# or
+bun add @ncdai/react-wheel-picker
 ```
 
-## Anatomy
-
-The wheel picker consists of two main components:
-
-### WheelPickerWrapper
-
-The wrapper component that contains one or more wheel pickers. It provides the container structure and handles the layout of multiple wheels.
-
-```tsx
-<WheelPickerWrapper>
-  <WheelPicker />
-  <WheelPicker />
-  <WheelPicker />
-</WheelPickerWrapper>
-```
-
-### WheelPicker
-
-The core component that renders a single wheel of options. Each wheel picker consists of:
-
-- A container with a 3D perspective
-- A scrollable list of options
-- A highlight area that indicates the selected option
-- A mask that creates the fade effect at the top and bottom
-
-```tsx
-<WheelPicker
-  options={[
-    { label: "React", value: "react" },
-    { label: "Vue", value: "vue" },
-    { label: "Angular", value: "angular" },
-  ]}
-/>
-```
-
-## Usage
-
-### Import CSS
+Add the core CSS to your app's entry point (e.g., `src/app/layout.tsx`, `src/main.tsx`, or `src/index.tsx`):
 
 ```tsx
 import "@ncdai/react-wheel-picker/dist/style.css";
 ```
 
-This CSS file includes only the core layout for the wheel picker. For custom visuals, use the `classNames` prop as shown in the Tailwind CSS example below.
+> This CSS includes only basic layout. Use classNames to customize visuals (see below).
 
-### Import components
+Use the component in your app:
 
 ```tsx
 import {
@@ -68,11 +35,7 @@ import {
   type WheelPickerOption,
   type WheelPickerClassNames,
 } from "@ncdai/react-wheel-picker";
-```
 
-### Example with Tailwind CSS
-
-```tsx
 const options: WheelPickerOption[] = [
   {
     label: "React",
@@ -106,52 +69,6 @@ export function WheelPickerDemo() {
 }
 ```
 
-### More examples
+## Documentation
 
-Check out additional demos and guides: https://chanhdai.com/blog/react-wheel-picker
-
-## API
-
-### WheelPicker
-
-Props for the WheelPicker component:
-
-| Prop              | Type                      | Default    | Description                                                    |
-| ----------------- | ------------------------- | ---------- | -------------------------------------------------------------- |
-| `options`         | `WheelPickerOption[]`     | (required) | Array of options to display in the wheel                       |
-| `value`           | `string`                  | -          | Current value of the picker (controlled mode)                  |
-| `defaultValue`    | `string`                  | -          | Default value of the picker (uncontrolled mode)                |
-| `onValueChange`   | `(value: string) => void` | -          | Callback fired when the selected value changes                 |
-| `infinite`        | `boolean`                 | `false`    | Enable infinite scrolling                                      |
-| `visibleCount`    | `number`                  | `20`       | Number of options visible on the wheel (must be multiple of 4) |
-| `dragSensitivity` | `number`                  | `3`        | Sensitivity of the drag interaction (higher = more sensitive)  |
-| `classNames`      | `WheelPickerClassNames`   | -          | Custom class names for styling                                 |
-
-### WheelPickerWrapper
-
-Props for the WheelPickerWrapper component:
-
-| Prop        | Type              | Default    | Description                |
-| ----------- | ----------------- | ---------- | -------------------------- |
-| `className` | `string`          | -          | CSS class name for wrapper |
-| `children`  | `React.ReactNode` | (required) | WheelPicker components     |
-
-### Types
-
-```tsx
-type WheelPickerOption = {
-  /** Value that will be returned when this option is selected */
-  value: string;
-  /** Text label displayed for this option */
-  label: string;
-};
-
-type WheelPickerClassNames = {
-  /** Class name for individual option items */
-  optionItem?: string;
-  /** Class name for the wrapper of the highlighted area */
-  highlightWrapper?: string;
-  /** Class name for the highlighted item */
-  highlightItem?: string;
-};
-```
+Find the full API reference in the [documentation](https://react-wheel-picker.chanhdai.com/docs/getting-started).

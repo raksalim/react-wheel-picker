@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 import { Mark } from "./mark";
@@ -8,10 +10,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-1 leading-none font-bold">
+        <Link
+          className="flex items-center gap-1 leading-none font-bold"
+          href="/"
+        >
           <Mark className="size-6" />
           React Wheel Picker
-        </div>
+        </Link>
 
         <div className="flex items-center gap-2">
           <Button variant="outline" size="icon" asChild>

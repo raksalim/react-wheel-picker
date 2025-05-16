@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -113,11 +114,68 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply overscroll-none bg-background font-sans text-foreground antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@utility rehype-pretty-code {
+  @apply my-6;
+
+  pre {
+    @apply max-h-[512px] overflow-x-auto rounded-lg bg-zinc-900 py-4;
+  }
+
+  code {
+    @apply font-mono text-sm;
+  }
+
+  [data-line] {
+    @apply px-4 first:pr-12;
+  }
+
+  [data-rehype-pretty-code-title] {
+    @apply mb-2 px-4 text-sm font-medium;
+  }
+
+  code[data-line-numbers] {
+    counter-reset: line;
+  }
+
+  code[data-line-numbers] > [data-line]::before {
+    @apply mr-8 inline-block w-3 text-right text-xs text-muted-foreground;
+    counter-increment: line;
+    content: counter(line);
+  }
+
+  code[data-line-numbers-max-digits="2"] > [data-line]::before {
+    @apply w-5;
+  }
+
+  code[data-line-numbers-max-digits="3"] > [data-line]::before {
+    @apply w-7;
+  }
+
+  code[data-line-numbers-max-digits="4"] > [data-line]::before {
+    @apply w-9;
+  }
+}
+
+@utility step {
+  counter-increment: step;
+
+  &::before {
+    @apply mr-2 inline-flex size-8 items-center justify-center rounded-full border bg-muted text-center -indent-px text-sm font-medium shadow-xs md:absolute md:-mt-0.5 md:-ml-11.5;
+    content: counter(step);
   }
 }

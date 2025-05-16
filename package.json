@@ -29,6 +29,8 @@
     "dev:website": "turbo run dev --filter=website...",
     "prettier:check": "prettier --check .",
     "format": "prettier --write .",
+    "registry:internal:build": "pnpm --filter=website registry:internal:build",
+    "registry:build": "pnpm --filter=website registry:build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
