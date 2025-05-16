@@ -21,11 +21,22 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
+  "tsup": {
+    "entry": [
+      "src/index.tsx"
+    ],
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": true,
+    "clean": true,
+    "publicDir": "./src/assets"
+  },
   "scripts": {
-    "dev": "bunchee --watch",
-    "build": "bunchee && pnpm copy-assets",
+    "dev": "tsup --watch",
+    "build": "tsup --minify",
     "type-check": "tsc --noEmit",
-    "copy-assets": "cp -r ./src/style.css ./dist/style.css",
     "dev:website": "turbo run dev --filter=website...",
     "prettier:check": "prettier --check .",
     "format": "prettier --write .",
@@ -53,9 +64,9 @@
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
-    "bunchee": "^6.5.1",
     "prettier": "3.5.3",
     "react": "^19.0.0",
+    "tsup": "8.5.0",
     "turbo": "^2.5.3",
     "typescript": "^5.8.3"
   },
