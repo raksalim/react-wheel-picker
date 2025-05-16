@@ -23,7 +23,7 @@ export default function Home() {
       <div className="mb-8 flex justify-center">
         <Button asChild>
           <a
-            href="https://github.com/ncdai/react-wheel-picker?tab=readme-ov-file#installation"
+            href="https://staging.chanhdai.com/blog/react-wheel-picker"
             target="_blank"
             rel="noopener"
           >
