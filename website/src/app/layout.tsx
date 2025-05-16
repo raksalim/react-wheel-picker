@@ -21,6 +21,31 @@ export const metadata: Metadata = {
   title: "React Wheel Picker",
   description:
     "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
+  keywords: ["react", "wheel picker", "wheel", "picker"],
+  authors: [
+    {
+      name: "ncdai",
+      url: "https://chanhdai.com",
+    },
+  ],
+  creator: "ncdai",
+  openGraph: {
+    siteName: "React Wheel Picker",
+    url: "/",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "React Wheel Picker",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@iamncdai", // Twitter username
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
