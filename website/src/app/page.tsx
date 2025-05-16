@@ -23,7 +23,7 @@ export default function Home() {
       <div className="mb-8 flex justify-center">
         <Button asChild>
           <a
-            href="https://staging.chanhdai.com/blog/react-wheel-picker"
+            href="https://chanhdai.com/blog/react-wheel-picker"
             target="_blank"
             rel="noopener"
           >
