@@ -7,20 +7,36 @@ import {
 
 const options: WheelPickerOption[] = [
   {
-    label: "React",
-    value: "react",
+    label: "Next.js",
+    value: "nextjs",
   },
   {
-    label: "Vue",
-    value: "vue",
+    label: "Vite",
+    value: "vite",
   },
   {
-    label: "Angular",
-    value: "angular",
+    value: "Laravel",
+    label: "laravel",
   },
   {
-    label: "Svelte",
-    value: "svelte",
+    label: "React Router",
+    value: "react-router",
+  },
+  {
+    label: "Astro",
+    value: "astro",
+  },
+  {
+    label: "TanStack Start",
+    value: "tanstack-start",
+  },
+  {
+    label: "TanStack Router",
+    value: "tanstack-router",
+  },
+  {
+    label: "Gatsby",
+    value: "gatsby",
   },
 ];
 
@@ -33,7 +49,11 @@ const classNames: WheelPickerClassNames = {
 export function SimplePickerDemo() {
   return (
     <WheelPickerWrapper className="mx-auto max-w-56 rounded-md border border-zinc-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-950">
-      <WheelPicker options={options} classNames={classNames} />
+      <WheelPicker
+        options={options}
+        defaultValue="react-router"
+        classNames={classNames}
+      />
     </WheelPickerWrapper>
   );
 }
