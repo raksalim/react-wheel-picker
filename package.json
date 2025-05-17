@@ -1,76 +1,21 @@
 {
-  "name": "@ncdai/react-wheel-picker",
-  "version": "1.0.4",
-  "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "default": "./dist/index.js"
-    },
-    "./dist/style.css": "./dist/style.css"
-  },
-  "tsup": {
-    "entry": [
-      "src/index.tsx"
-    ],
-    "format": [
-      "esm",
-      "cjs"
-    ],
-    "dts": true,
-    "clean": true,
-    "publicDir": "./src/assets"
-  },
-  "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup --minify",
-    "type-check": "tsc --noEmit",
-    "dev:website": "turbo run dev --filter=website...",
-    "prettier:check": "prettier --check .",
-    "format": "prettier --write .",
-    "registry:internal:build": "pnpm --filter=website registry:internal:build",
-    "registry:build": "pnpm --filter=website registry:build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "react",
-    "wheel picker",
-    "wheel",
-    "picker"
-  ],
-  "author": "Nguyen Chanh Dai <dai@chanhdai.com>",
-  "license": "MIT",
-  "homepage": "https://react-wheel-picker.chanhdai.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ncdai/react-wheel-picker.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ncdai/react-wheel-picker/issues"
-  },
+  "name": "react-wheel-picker-monorepo",
+  "version": "0.1.0",
+  "private": true,
   "packageManager": "pnpm@10.7.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo dev --filter=web...",
+    "build": "turbo run build",
+    "build:web": "turbo build --filter=web...",
+    "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    "format:check": "turbo run format:check",
+    "format:write": "turbo run format:write"
+  },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
     "prettier": "3.5.3",
-    "react": "^19.0.0",
-    "tsup": "8.5.0",
     "turbo": "^2.5.3",
     "typescript": "^5.8.3"
-  },
-  "peerDependencies": {
-    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0.0 || ^19.0.0-rc"
   }
 }
