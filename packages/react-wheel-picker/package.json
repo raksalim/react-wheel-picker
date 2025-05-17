@@ -59,7 +59,8 @@
   "homepage": "https://react-wheel-picker.chanhdai.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/react-wheel-picker.git"
+    "url": "git+https://github.com/ncdai/react-wheel-picker.git",
+    "directory": "packages/react-wheel-picker"
   },
   "bugs": {
     "url": "https://github.com/ncdai/react-wheel-picker/issues"
