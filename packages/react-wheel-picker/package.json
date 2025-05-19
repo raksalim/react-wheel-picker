@@ -1,6 +1,6 @@
 {
   "name": "@ncdai/react-wheel-picker",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
   "publishConfig": {
     "access": "public"
@@ -23,7 +23,8 @@
       },
       "default": "./dist/index.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/index.css",
+    "./style.css": "./dist/index.css"
   },
   "tsup": {
     "entry": [
@@ -36,7 +37,7 @@
     "bundle": true,
     "clean": true,
     "dts": true,
-    "publicDir": "./src/assets",
+    "injectStyle": false,
     "outDir": "./dist"
   },
   "scripts": {
@@ -44,6 +45,7 @@
     "build": "tsup --minify",
     "check-types": "tsc --noEmit",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format:check": "prettier --check \"**/*.{ts,tsx}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx}\" --cache",
     "publish:release": "pnpm build && pnpm publish --access public"
@@ -69,6 +71,7 @@
     "@eslint/js": "9.27.0",
     "@types/node": "^20",
     "@types/react": "^19",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-react": "7.37.5",
@@ -76,6 +79,7 @@
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-turbo": "^2.5.3",
     "globals": "16.1.0",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "tsup": "8.5.0",
     "typescript": "^5.8.3",

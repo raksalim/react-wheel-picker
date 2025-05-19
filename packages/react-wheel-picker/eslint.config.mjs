@@ -12,6 +12,13 @@ export default defineConfig([
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/consistent-type-imports": "error",
+      "@typescript-eslint/no-import-type-side-effects": "error",
+    },
+  },
+  {
     plugins: {
       turbo,
     },

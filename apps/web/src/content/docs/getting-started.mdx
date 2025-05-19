@@ -57,7 +57,7 @@ The core component that renders a single wheel of options. Each wheel picker con
 Add the core CSS to your app's entry point (e.g., `src/app/layout.tsx`, `src/main.tsx`, or `src/index.tsx`):
 
 ```tsx
-import "@ncdai/react-wheel-picker/dist/style.css";
+import "@ncdai/react-wheel-picker/style.css";
 ```
 
 > This CSS includes only basic layout. Use classNames to customize visuals (see below).
@@ -98,7 +98,7 @@ const classNames: WheelPickerClassNames = {
 
 export function WheelPickerDemo() {
   return (
-    <WheelPickerWrapper className="max-w-56 rounded-md border border-zinc-200 bg-white shadow-xs">
+    <WheelPickerWrapper className="shadow-xs max-w-56 rounded-md border border-zinc-200 bg-white">
       <WheelPicker options={options} classNames={classNames} />
     </WheelPickerWrapper>
   );

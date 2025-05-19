@@ -1,4 +1,4 @@
-import "@ncdai/react-wheel-picker/dist/style.css";
+import "@ncdai/react-wheel-picker/style.css";
 
 import Link from "next/link";
 

@@ -1,6 +1,7 @@
+import type {
+  WheelPickerOption} from "@/registry/wheel-picker";
 import {
   WheelPicker,
-  WheelPickerOption,
   WheelPickerWrapper,
 } from "@/registry/wheel-picker";
 

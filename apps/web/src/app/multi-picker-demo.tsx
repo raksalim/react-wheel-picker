@@ -1,9 +1,8 @@
-import {
-  WheelPicker,
+import type {
   WheelPickerClassNames,
   WheelPickerOption,
-  WheelPickerWrapper,
 } from "@ncdai/react-wheel-picker";
+import { WheelPicker, WheelPickerWrapper } from "@ncdai/react-wheel-picker";
 
 const createArray = (length: number, add = 0): WheelPickerOption[] =>
   Array.from({ length }, (_, i) => {

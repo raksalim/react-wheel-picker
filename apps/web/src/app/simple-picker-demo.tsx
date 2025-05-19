@@ -1,9 +1,8 @@
-import {
-  WheelPicker,
-  type WheelPickerClassNames,
-  type WheelPickerOption,
-  WheelPickerWrapper,
+import type {
+  WheelPickerClassNames,
+  WheelPickerOption,
 } from "@ncdai/react-wheel-picker";
+import { WheelPicker, WheelPickerWrapper } from "@ncdai/react-wheel-picker";
 
 const options: WheelPickerOption[] = [
   {

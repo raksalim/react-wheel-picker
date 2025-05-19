@@ -21,7 +21,7 @@ bun add @ncdai/react-wheel-picker
 Add the core CSS to your app's entry point (e.g., `src/app/layout.tsx`, `src/main.tsx`, or `src/index.tsx`):
 
 ```tsx
-import "@ncdai/react-wheel-picker/dist/style.css";
+import "@ncdai/react-wheel-picker/style.css";
 ```
 
 > This CSS includes only basic layout. Use classNames to customize visuals (see below).
