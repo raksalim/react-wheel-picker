@@ -27,19 +27,21 @@ jobs:
           node-version: 20.16.0
           cache: "pnpm"
 
-      - name: Install dependencies
+      - name: Install NPM dependencies
         run: pnpm install
 
-      - name: Build package
+      - name: Build Package
         run: pnpm build:react-wheel-picker
 
-      - name: Create release pull request or publish to npm
+      - name: Create release PR or publish to NPM
         id: changesets
         uses: changesets/action@v1
         with:
+          title: "chore(release): version packages"
+          commit: "chore(release): version packages"
+          version: node .github/changeset-version.js
           publish: npx changeset publish
-          commit: "chore: version packages"
-          title: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_ENV: "production"

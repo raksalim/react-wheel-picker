@@ -8,6 +8,10 @@ Check out the live demo: https://chanhdai.com/blog/react-wheel-picker
 
 Find the full API reference in the [documentation](https://react-wheel-picker.chanhdai.com/docs/getting-started).
 
+## Contributing
+
+Please read the [contributing guide](/CONTRIBUTING.md).
+
 ## License
 
 Licensed under the [MIT license](./LICENSE).

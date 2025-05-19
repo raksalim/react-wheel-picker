@@ -14,8 +14,7 @@
     "check-types": "turbo run check-types",
     "format:check": "turbo run format:check",
     "format:write": "turbo run format:write",
-    "publish:release": "cd packages/react-wheel-picker && pnpm publish:release",
-    "release": "pnpm build:react-wheel-picker && changeset publish"
+    "publish:release": "cd packages/react-wheel-picker && pnpm publish:release"
   },
   "keywords": [
     "react",
