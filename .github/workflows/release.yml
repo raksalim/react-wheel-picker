@@ -33,11 +33,11 @@ jobs:
       - name: Build package
         run: pnpm build:react-wheel-picker
 
-      - name: Create pelease pull request or publish to npm
+      - name: Create release pull request or publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: changeset publish
+          publish: npx changeset publish
           commit: "chore: version packages"
           title: "chore: version packages"
         env:
