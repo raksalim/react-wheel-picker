@@ -15,6 +15,22 @@
     "format:write": "turbo run format:write",
     "publish:release": "cd packages/react-wheel-picker && pnpm publish:release"
   },
+  "keywords": [
+    "react",
+    "wheel picker",
+    "wheel",
+    "picker"
+  ],
+  "author": "Nguyen Chanh Dai <dai@chanhdai.com>",
+  "license": "MIT",
+  "homepage": "https://react-wheel-picker.chanhdai.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncdai/react-wheel-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ncdai/react-wheel-picker/issues"
+  },
   "devDependencies": {
     "prettier": "3.5.3",
     "turbo": "^2.5.3",
