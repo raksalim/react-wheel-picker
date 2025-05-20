@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-dashed bg-background/90 p-4 backdrop-blur-md">
+    <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background/90 p-4 backdrop-blur-md">
       <Link
         className="flex items-center gap-2 text-lg leading-none font-bold tracking-tight"
         href="/"

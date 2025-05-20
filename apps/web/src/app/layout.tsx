@@ -9,8 +9,6 @@ import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 
-const ogImageUrl = "/og-image.png?v=250516";
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_INFO.url),
   title: {
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: ogImageUrl,
+        url: SITE_INFO.metaImage,
         width: 1200,
         height: 630,
         alt: "React Wheel Picker",
@@ -42,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@iamncdai", // Twitter username
-    images: [ogImageUrl],
+    images: [SITE_INFO.metaImage],
   },
 };
 
@@ -71,7 +69,7 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} container mx-auto`}
       >
-        <div className="min-h-screen border-dashed sm:border-x">
+        <div className="min-h-screen sm:border-x">
           <Providers>
             <Header />
             {children}
