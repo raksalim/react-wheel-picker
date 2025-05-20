@@ -67,12 +67,17 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
-        <Providers>
-          <Header />
-          {children}
-          <Footer />
-        </Providers>
+
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} container mx-auto`}
+      >
+        <div className="min-h-screen border-dashed sm:border-x">
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </div>
       </body>
     </html>
   );
