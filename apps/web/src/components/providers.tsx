@@ -1,5 +1,6 @@
 "use client";
 
+import { ProgressProvider } from "@bprogress/next/app";
 import { Provider as JotaiProvider } from "jotai";
 import { ThemeProvider } from "next-themes";
 
@@ -16,7 +17,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
         defaultTheme="system"
         attribute="class"
       >
-        {children}
+        <ProgressProvider
+          color="#2563eb"
+          height="2px"
+          delay={500}
+          options={{ showSpinner: false }}
+        >
+          {children}
+        </ProgressProvider>
 
         <Toaster />
       </ThemeProvider>
