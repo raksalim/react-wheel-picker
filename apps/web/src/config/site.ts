@@ -1,6 +1,7 @@
 export const SITE_INFO = {
   name: "React Wheel Picker",
   url: process.env.APP_URL || "https://react-wheel-picker.chanhdai.com",
+  metaImage: "/meta-image.jpeg",
 };
 
 export const SOURCE_CODE_GITHUB_URL =
