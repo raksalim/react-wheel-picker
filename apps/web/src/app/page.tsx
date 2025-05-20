@@ -3,6 +3,7 @@ import "@ncdai/react-wheel-picker/style.css";
 import Link from "next/link";
 
 import { Mark } from "@/components/mark";
+import { Spotlight } from "@/components/spotlight";
 import { Button } from "@/components/ui/button";
 import { MultiPickerDemo } from "@/components/wheel-picker/multi-picker-demo";
 import { SimplePickerDemo } from "@/components/wheel-picker/simple-picker-demo";
@@ -10,7 +11,9 @@ import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 export default function Home() {
   return (
-    <div className="px-4">
+    <div className="relative overflow-hidden px-4">
+      <Spotlight />
+
       <Mark className="mx-auto mt-12 mb-6 size-14" />
 
       <h1 className="mb-2 text-center text-3xl font-bold tracking-tight sm:text-4xl">
@@ -39,7 +42,7 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="mb-12 space-y-4">
+      <div className="relative z-40 mb-12 space-y-4">
         <SimplePickerDemo />
         <MultiPickerDemo />
       </div>
