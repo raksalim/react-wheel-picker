@@ -2,15 +2,13 @@
 
 iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 
-Check out the live demo: https://chanhdai.com/blog/react-wheel-picker
-
-## Features
-
 - 📱 Natural touch scrolling with smooth inertia effect
 - 🖱️ Mouse drag and scroll support for desktop
 - 🔄 Infinite loop scrolling
 - 🎨 Unstyled components for complete style customization
-- ⚡ Easy installation via shadcn CLI. [Learn more](https://chanhdai.com/blog/react-wheel-picker).
+- ⚡️ Easy installation via shadcn CLI. [Learn more](https://chanhdai.com/blog/react-wheel-picker)
+
+Check out the live demo: https://chanhdai.com/blog/react-wheel-picker
 
 ## Documentation
 
