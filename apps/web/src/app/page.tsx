@@ -98,6 +98,7 @@ export default function Home() {
                             className="font-medium underline underline-offset-4"
                             href={item.learnMore}
                             target="_blank"
+                            rel="noopener"
                           >
                             Learn more
                           </a>
