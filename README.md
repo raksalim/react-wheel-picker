@@ -21,3 +21,13 @@ Please read the [contributing guide](/CONTRIBUTING.md).
 ## License
 
 Licensed under the [MIT license](./LICENSE).
+
+## Star History
+
+<a href="https://www.star-history.com/#ncdai/react-wheel-picker&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ncdai/react-wheel-picker&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ncdai/react-wheel-picker&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ncdai/react-wheel-picker&type=Date" />
+  </picture>
+</a>
