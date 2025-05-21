@@ -1,3 +1,5 @@
+import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
+
 export function Footer() {
   return (
     <footer className="border-t border-dashed p-4">
@@ -5,7 +7,7 @@ export function Footer() {
         Built by{" "}
         <a
           className="font-medium underline underline-offset-4"
-          href="https://www.linkedin.com/in/ncdai"
+          href="https://chanhdai.com/?utm_source=react-wheel-picker"
           target="_blank"
           rel="noopener"
         >
@@ -14,7 +16,7 @@ export function Footer() {
         . The source code is available on{" "}
         <a
           className="font-medium underline underline-offset-4"
-          href="https://github.com/ncdai/react-wheel-picker"
+          href={SOURCE_CODE_GITHUB_URL}
           target="_blank"
           rel="noopener"
         >
