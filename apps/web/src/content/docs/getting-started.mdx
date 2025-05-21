@@ -7,9 +7,30 @@ updatedAt: 2025-05-20
 
 ## Installation
 
+<CodeTabs className="gap-0 mt-6">
+
+<TabsList>
+  <TabsTrigger value="shadcn/ui">shadcn/ui</TabsTrigger>
+  <TabsTrigger value="primitives">Primitives</TabsTrigger>
+</TabsList>
+
+<TabsContent value="shadcn/ui" className="[&>figure]:mb-0">
+
+```bash
+npx shadcn@latest add https://chanhdai.com/r/wheel-picker.json
+```
+
+</TabsContent>
+
+<TabsContent value="primitives" className="[&>figure]:mb-0">
+
 ```bash
 npm install @ncdai/react-wheel-picker
 ```
+
+</TabsContent>
+
+</CodeTabs>
 
 ## Anatomy
 
@@ -38,6 +59,51 @@ The core component that renders a single wheel of options. Each wheel picker con
 
 ## Usage
 
+<CodeTabs className="gap-0 mt-6">
+
+<TabsList>
+  <TabsTrigger value="shadcn/ui">shadcn/ui</TabsTrigger>
+  <TabsTrigger value="primitives">Primitives</TabsTrigger>
+</TabsList>
+
+<TabsContent value="shadcn/ui" className="[&>figure]:mb-0">
+
+```tsx
+import {
+  WheelPicker,
+  WheelPickerWrapper,
+  type WheelPickerOption,
+} from "@/components/wheel-picker";
+```
+
+```tsx
+const options: WheelPickerOption[] = [
+  {
+    label: "Next.js",
+    value: "nextjs",
+  },
+  {
+    label: "Vite",
+    value: "vite",
+  },
+  // ...
+];
+
+export function WheelPickerDemo() {
+  const [value, setValue] = useState("nextjs");
+
+  return (
+    <WheelPickerWrapper>
+      <WheelPicker options={options} value={value} onValueChange={setValue} />
+    </WheelPickerWrapper>
+  );
+}
+```
+
+</TabsContent>
+
+<TabsContent value="primitives" className="[&>figure]:mb-0">
+
 <Steps>
 
 <Step>Import the default styles</Step>
@@ -52,7 +118,7 @@ This CSS includes only basic layout. Use `classNames` to customize visuals (see 
 
 <Step>Use the component</Step>
 
-<Tabs className="gap-0" defaultValue="tailwindcss">
+<Tabs className="gap-0 mt-4" defaultValue="tailwindcss">
 
 <TabsList>
   <TabsTrigger value="tailwindcss">Tailwind CSS</TabsTrigger>
@@ -66,9 +132,10 @@ import {
   WheelPicker,
   WheelPickerWrapper,
   type WheelPickerOption,
-  type WheelPickerClassNames,
 } from "@ncdai/react-wheel-picker";
+```
 
+```tsx
 const options: WheelPickerOption[] = [
   {
     label: "Next.js",
@@ -78,42 +145,24 @@ const options: WheelPickerOption[] = [
     label: "Vite",
     value: "vite",
   },
-  {
-    label: "Laravel",
-    value: "laravel",
-  },
-  {
-    label: "React Router",
-    value: "react-router",
-  },
-  {
-    label: "Astro",
-    value: "astro",
-  },
-  {
-    label: "TanStack Start",
-    value: "tanstack-start",
-  },
-  {
-    label: "TanStack Router",
-    value: "tanstack-router",
-  },
-  {
-    label: "Gatsby",
-    value: "gatsby",
-  },
+  // ...
 ];
 
-const classNames: WheelPickerClassNames = {
-  optionItem: "text-zinc-400 dark:text-zinc-500",
-  highlightWrapper:
-    "bg-zinc-100 text-zinc-950 dark:bg-zinc-900 dark:text-zinc-50",
-};
-
 export function WheelPickerDemo() {
+  const [value, setValue] = useState("nextjs");
+
   return (
-    <WheelPickerWrapper className="max-w-56 rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
-      <WheelPicker options={options} classNames={classNames} />
+    <WheelPickerWrapper className="w-56 rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
+      <WheelPicker
+        options={options}
+        value={value}
+        onValueChange={setValue}
+        classNames={{
+          optionItem: "text-zinc-400 dark:text-zinc-500",
+          highlightWrapper:
+            "bg-zinc-100 text-zinc-950 dark:bg-zinc-900 dark:text-zinc-50",
+        }}
+      />
     </WheelPickerWrapper>
   );
 }
@@ -127,7 +176,7 @@ export function WheelPickerDemo() {
 /* theme.css */
 
 [data-rwp-wrapper] {
-  max-width: 14rem;
+  width: 14rem;
   border-radius: 0.375rem;
   border: 1px solid #e4e4e7;
   background-color: #ffffff;
@@ -149,7 +198,9 @@ import {
   WheelPickerWrapper,
   type WheelPickerOption,
 } from "@ncdai/react-wheel-picker";
+```
 
+```tsx
 const options: WheelPickerOption[] = [
   {
     label: "Next.js",
@@ -159,36 +210,15 @@ const options: WheelPickerOption[] = [
     label: "Vite",
     value: "vite",
   },
-  {
-    label: "Laravel",
-    value: "laravel",
-  },
-  {
-    label: "React Router",
-    value: "react-router",
-  },
-  {
-    label: "Astro",
-    value: "astro",
-  },
-  {
-    label: "TanStack Start",
-    value: "tanstack-start",
-  },
-  {
-    label: "TanStack Router",
-    value: "tanstack-router",
-  },
-  {
-    label: "Gatsby",
-    value: "gatsby",
-  },
+  // ...
 ];
 
 export function WheelPickerDemo() {
+  const [value, setValue] = useState("nextjs");
+
   return (
     <WheelPickerWrapper>
-      <WheelPicker options={options} />
+      <WheelPicker options={options} value={value} onValueChange={setValue} />
     </WheelPickerWrapper>
   );
 }
@@ -200,7 +230,24 @@ export function WheelPickerDemo() {
 
 </Steps>
 
+</TabsContent>
+
+</CodeTabs>
+
+## Examples
+
+You can find usage examples in the **Examples** section at: https://chanhdai.com/blog/react-wheel-picker
+
 ## API Reference
+
+### WheelPickerWrapper
+
+Props for the `WheelPickerWrapper` component:
+
+| Prop        | Type              | Default    | Description                |
+| ----------- | ----------------- | ---------- | -------------------------- |
+| `className` | `string`          | -          | CSS class name for wrapper |
+| `children`  | `React.ReactNode` | (required) | `WheelPicker` components   |
 
 ### WheelPicker
 
@@ -216,15 +263,6 @@ Props for the `WheelPicker` component:
 | `visibleCount`    | `number`                  | `20`       | Number of options visible on the wheel (must be multiple of 4) |
 | `dragSensitivity` | `number`                  | `3`        | Sensitivity of the drag interaction (higher = more sensitive)  |
 | `classNames`      | `WheelPickerClassNames`   | -          | Custom class names for styling                                 |
-
-### WheelPickerWrapper
-
-Props for the `WheelPickerWrapper` component:
-
-| Prop        | Type              | Default    | Description                |
-| ----------- | ----------------- | ---------- | -------------------------- |
-| `className` | `string`          | -          | CSS class name for wrapper |
-| `children`  | `React.ReactNode` | (required) | `WheelPicker` components   |
 
 ### Types
 
