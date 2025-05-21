@@ -2,7 +2,7 @@ import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-dashed p-4">
+    <footer className="border-t border-dashed p-6">
       <p className="text-center text-sm text-balance">
         Built by{" "}
         <a

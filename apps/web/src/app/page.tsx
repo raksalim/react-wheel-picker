@@ -4,8 +4,7 @@ import {
   InfinityIcon,
   MouseIcon,
   PaletteIcon,
-  SquareTerminalIcon,
-  TabletSmartphoneIcon,
+  SmartphoneIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -18,7 +17,7 @@ import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 const featuredItems = [
   {
-    icon: TabletSmartphoneIcon,
+    icon: SmartphoneIcon,
     title: "Natural touch scrolling",
   },
   {
@@ -34,7 +33,7 @@ const featuredItems = [
     title: "Unstyled components for complete style customization",
   },
   {
-    icon: SquareTerminalIcon,
+    icon: ShadcnIcon,
     title: "Easy installation via shadcn CLI",
     learnMore: "https://chanhdai.com/blog/react-wheel-picker",
   },
@@ -73,50 +72,76 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="mb-12 sm:border-y">
-        <div className="mx-auto grid max-w-4xl gap-12 divide-dashed border-dashed sm:grid-cols-2 sm:gap-0 sm:divide-x lg:border-x">
-          <div className="order-2 px-4 sm:order-1 sm:p-6">
+      <div className="mb-12 border-y">
+        <div className="mx-auto grid max-w-4xl divide-dashed border-dashed sm:grid-cols-2 sm:divide-x lg:border-x">
+          <div className="order-2 p-6 sm:order-1">
             <div className="grid gap-4">
-              {featuredItems.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <div key={item.title} className="flex items-center gap-4">
-                    <span
-                      className="flex size-8 shrink-0 items-center justify-center rounded-md border bg-black/1 shadow-xs dark:bg-white/5 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:text-muted-foreground"
-                      aria-hidden="true"
-                    >
-                      <Icon />
-                    </span>
-
-                    <p className="text-balance">
-                      {item.title}
-                      {item.learnMore && (
-                        <>
-                          .{" "}
-                          <a
-                            className="font-medium underline underline-offset-4"
-                            href={item.learnMore}
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            Learn more
-                          </a>
-                        </>
-                      )}
-                    </p>
-                  </div>
-                );
-              })}
+              {featuredItems.map((item) => (
+                <FeaturedItem key={item.title} {...item} />
+              ))}
             </div>
           </div>
 
-          <div className="relative z-40 order-1 space-y-4 sm:order-2 sm:py-6 sm:dark:bg-black/10">
+          <div className="relative z-40 order-1 space-y-6 py-6 max-sm:border-b sm:order-2 sm:dark:bg-black/10">
             <SimplePickerDemo />
             <MultiPickerDemo />
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function FeaturedItem({
+  icon: Icon,
+  title,
+  learnMore,
+}: {
+  icon: React.ComponentType;
+  title: string;
+  learnMore?: string;
+}) {
+  return (
+    <div className="flex items-center gap-4">
+      <span
+        className="flex size-8 shrink-0 items-center justify-center rounded-md border bg-black/1 shadow-xs dark:bg-white/5 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:text-muted-foreground"
+        aria-hidden="true"
+      >
+        <Icon />
+      </span>
+
+      <p className="text-balance">
+        {title}
+        {learnMore && (
+          <>
+            .{" "}
+            <a
+              className="font-medium underline underline-offset-4"
+              href={learnMore}
+              target="_blank"
+              rel="noopener"
+            >
+              Learn more
+            </a>
+          </>
+        )}
+      </p>
+    </div>
+  );
+}
+
+function ShadcnIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+      <path fill="none" d="M0 0h256v256H0z" />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+        d="m208 128-80 80M192 40 40 192"
+      />
+    </svg>
   );
 }
