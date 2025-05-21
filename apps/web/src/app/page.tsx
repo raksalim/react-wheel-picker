@@ -35,7 +35,7 @@ const featuredItems = [
   {
     icon: ShadcnIcon,
     title: "Easy installation via shadcn CLI",
-    learnMore: "https://chanhdai.com/blog/react-wheel-picker",
+    // learnMore: "https://chanhdai.com/blog/react-wheel-picker",
   },
 ];
 
