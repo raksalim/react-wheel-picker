@@ -1,4 +1,4 @@
-# React Wheel Picker
+# [React Wheel Picker](https://react-wheel-picker.chanhdai.com) &middot; ![GitHub License](https://img.shields.io/github/license/ncdai/react-wheel-picker) ![NPM Version](https://img.shields.io/npm/v/%40ncdai%2Freact-wheel-picker) ![NPM Downloads](https://img.shields.io/npm/dw/%40ncdai%2Freact-wheel-picker) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ncdai/react-wheel-picker/release.yml)
 
 iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 
