@@ -12,11 +12,14 @@ import type {
 } from "./types";
 import { useControllableState } from "./use-controllable-state";
 
-const WHEEL_THROTTLE = 150; // ms
 const RESISTANCE = 0.3; // Resistance when scrolling above the top or below the bottom
 const MAX_VELOCITY = 30; // Maximum velocity for the scroll animation
 
 const easeOutCubic = (p: number) => Math.pow(p - 1, 3) + 1;
+
+// Clamp utility to constrain a value within bounds
+const clamp = (value: number, min: number, max: number) =>
+  Math.max(min, Math.min(value, max));
 
 const WheelPickerWrapper: React.FC<WheelPickerWrapperProps> = ({
   className,
@@ -65,7 +68,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     return result;
   }, [countProp, optionsProp, infiniteProp]);
 
-  const itemHeight = 28;
+  const itemHeight = 30;
   const halfItemHeight = itemHeight * 0.5;
   const itemAngle = 360 / countProp;
   const radius = itemHeight / Math.tan((itemAngle * Math.PI) / 180);
@@ -377,10 +380,6 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
       initialVelocity > 0 ? -baseDeceleration : baseDeceleration;
     let duration = 0;
 
-    // Clamp utility to constrain a value within bounds
-    const clamp = (value: number, min: number, max: number) =>
-      Math.max(min, Math.min(value, max));
-
     if (infiniteProp) {
       // Infinite mode: apply uniform deceleration to calculate scroll distance
       duration = Math.abs(initialVelocity / deceleration);
@@ -414,7 +413,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     });
 
     // Fallback selection update (in case animation callback fails)
-    selectByScroll(scrollRef.current);
+    // selectByScroll(scrollRef.current);
   };
 
   const finalizeDragAndStartInertiaScroll = () => {
@@ -478,13 +477,31 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     event.preventDefault();
 
     const now = Date.now();
-    if (now - lastWheelRef.current < WHEEL_THROTTLE) return;
+    if (now - lastWheelRef.current < 100) return;
 
     const direction = Math.sign(event.deltaY);
-    if (direction !== 0) {
-      selectByScroll(scrollRef.current + direction);
-      lastWheelRef.current = now;
+    if (!direction) return;
+
+    lastWheelRef.current = now;
+
+    const startScroll = scrollRef.current;
+    let endScroll = startScroll + direction;
+
+    if (infiniteProp) {
+      endScroll = Math.round(endScroll);
+    } else {
+      endScroll = clamp(Math.round(endScroll), 0, options.length - 1);
     }
+
+    const distance = Math.abs(endScroll - startScroll);
+    if (distance === 0) return;
+
+    const duration = Math.sqrt(distance / baseDeceleration);
+
+    cancelAnimation();
+    animateScroll(startScroll, endScroll, duration, () => {
+      selectByScroll(scrollRef.current);
+    });
   };
 
   const handleWheelEvent = useCallback(
