@@ -31,3 +31,5 @@ Licensed under the [MIT license](./LICENSE).
     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ncdai/react-wheel-picker&type=Date" />
   </picture>
 </a>
+
+<!-- GitAds-Verify: ZWW6YVB72F3EEFFTHLMCLS6WSKVVM4U2 -->
