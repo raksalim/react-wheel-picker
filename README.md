@@ -32,4 +32,7 @@ Licensed under the [MIT license](./LICENSE).
   </picture>
 </a>
 
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=ncdai/react-wheel-picker@github)](https://gitads.dev/v1/ad-track?source=ncdai/react-wheel-picker@github)
+
 <!-- GitAds-Verify: ZWW6YVB72F3EEFFTHLMCLS6WSKVVM4U2 -->
