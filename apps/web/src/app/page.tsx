@@ -77,7 +77,7 @@ export default function Home() {
       <div className="mb-12 border-y">
         <div className="mx-auto grid max-w-4xl grid-cols-1 border-dashed sm:grid-cols-2 lg:border-x">
           <div className="relative order-1 border-b border-dashed text-center font-mono sm:col-span-2">
-            <pre className="hide no-scrollbar overflow-x-auto p-4 text-blue-600 dark:text-blue-400">
+            <pre className="hide no-scrollbar overflow-x-auto p-4 text-cyan-600 dark:text-cyan-400">
               <code>{INSTALLATION_COMMAND}</code>
             </pre>
 
