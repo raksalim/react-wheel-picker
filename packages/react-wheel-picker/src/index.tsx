@@ -413,7 +413,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     });
 
     // Fallback selection update (in case animation callback fails)
-    // selectByScroll(scrollRef.current);
+    selectByScroll(scrollRef.current);
   };
 
   const finalizeDragAndStartInertiaScroll = () => {
@@ -496,7 +496,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     const distance = Math.abs(endScroll - startScroll);
     if (distance === 0) return;
 
-    const duration = Math.sqrt(distance / baseDeceleration);
+    const duration = Math.sqrt(distance / 5);
 
     cancelAnimation();
     animateScroll(startScroll, endScroll, duration, () => {
@@ -544,8 +544,6 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     selectByValue(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, valueProp]);
-
-  // const hello = "dai";
 
   return (
     <div ref={containerRef} data-rwp style={{ height: containerHeight }}>
