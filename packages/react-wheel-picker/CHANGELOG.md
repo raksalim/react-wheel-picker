@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.9
+
+### Patch Changes
+
+- e456552: Improve scroll behavior with smooth animation.
+
 ## 1.0.8
 
 ### Patch Changes
