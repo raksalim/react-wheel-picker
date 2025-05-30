@@ -2,9 +2,9 @@ import "@ncdai/react-wheel-picker/style.css";
 
 import {
   InfinityIcon,
-  MouseIcon,
-  PaletteIcon,
-  SmartphoneIcon,
+  MousePointerClickIcon,
+  PointerIcon,
+  TriangleDashedIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -18,11 +18,11 @@ import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 const featuredItems = [
   {
-    icon: SmartphoneIcon,
+    icon: PointerIcon,
     title: "Natural touch scrolling",
   },
   {
-    icon: MouseIcon,
+    icon: MousePointerClickIcon,
     title: "Mouse drag and scroll support for desktop",
   },
   {
@@ -30,7 +30,7 @@ const featuredItems = [
     title: "Infinite loop scrolling",
   },
   {
-    icon: PaletteIcon,
+    icon: TriangleDashedIcon,
     title: "Unstyled components for complete style customization",
   },
   {
@@ -58,14 +58,13 @@ export default function Home() {
       </p>
 
       <div className="mx-auto mb-12 grid grid-cols-2 gap-4 px-4 sm:w-sm">
-        <Button size="lg" asChild>
+        <Button asChild>
           <Link href="/docs/getting-started">Get Started</Link>
         </Button>
 
         <Button
           className="border-zinc-300 dark:border-zinc-700"
           variant="outline"
-          size="lg"
           asChild
         >
           <a href={SOURCE_CODE_GITHUB_URL} target="_blank" rel="noopener">
