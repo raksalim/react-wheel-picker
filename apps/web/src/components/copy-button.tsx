@@ -7,10 +7,6 @@ import { cn } from "@/lib/cn";
 
 import { Button } from "./ui/button";
 
-async function copyToClipboardWithMeta(value: string) {
-  navigator.clipboard.writeText(value);
-}
-
 export function CopyButton({
   value,
   className,
@@ -36,7 +32,7 @@ export function CopyButton({
         className,
       )}
       onClick={() => {
-        copyToClipboardWithMeta(value);
+        navigator.clipboard.writeText(value);
         setHasCopied(true);
       }}
       {...props}
