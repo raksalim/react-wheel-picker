@@ -1,9 +1,5 @@
-import type {
-  WheelPickerOption} from "@/registry/wheel-picker";
-import {
-  WheelPicker,
-  WheelPickerWrapper,
-} from "@/registry/wheel-picker";
+import type { WheelPickerOption } from "@/components/wheel-picker";
+import { WheelPicker, WheelPickerWrapper } from "@/components/wheel-picker";
 
 const createArray = (length: number, add = 0): WheelPickerOption[] =>
   Array.from({ length }, (_, i) => {
@@ -21,10 +17,10 @@ const meridiemOptions: WheelPickerOption[] = [
   { label: "PM", value: "PM" },
 ];
 
-export default function WheelPickerDemo() {
+export function MultiPickerDemo() {
   return (
-    <div className="w-full font-sans">
-      <WheelPickerWrapper className="mx-auto">
+    <div className="mx-auto w-64">
+      <WheelPickerWrapper>
         <WheelPicker options={hourOptions} infinite />
         <WheelPicker options={minuteOptions} infinite />
         <WheelPicker options={meridiemOptions} />

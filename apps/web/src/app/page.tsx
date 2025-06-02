@@ -8,13 +8,13 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { MultiPickerDemo } from "@/components/examples/multi-picker-demo";
+import { SimplePickerDemo } from "@/components/examples/simple-picker-demo";
+import { Icons } from "@/components/icons";
 import { InstallationCommand } from "@/components/installation-command";
 import { Mark } from "@/components/mark";
 import { Spotlight } from "@/components/spotlight";
 import { Button } from "@/components/ui/button";
-import { MultiPickerDemo } from "@/components/wheel-picker/multi-picker-demo";
-import { SimplePickerDemo } from "@/components/wheel-picker/simple-picker-demo";
-import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 const featuredItems = [
   {
@@ -34,7 +34,7 @@ const featuredItems = [
     title: "Unstyled components for complete style customization",
   },
   {
-    icon: ShadcnIcon,
+    icon: Icons.shadcn,
     title: "Easy installation via shadcn CLI",
   },
 ];
@@ -65,8 +65,12 @@ export default function Home() {
           variant="outline"
           asChild
         >
-          <a href={SOURCE_CODE_GITHUB_URL} target="_blank" rel="noopener">
-            GitHub
+          <a
+            href="https://chanhdai.com/blog/react-wheel-picker#examples"
+            target="_blank"
+            rel="noopener"
+          >
+            Examples
           </a>
         </Button>
       </div>
@@ -128,21 +132,5 @@ function FeaturedItem({
         )}
       </p>
     </div>
-  );
-}
-
-function ShadcnIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-      <path fill="none" d="M0 0h256v256H0z" />
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="32"
-        d="m208 128-80 80M192 40 40 192"
-      />
-    </svg>
   );
 }

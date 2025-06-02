@@ -3,11 +3,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeExternalLinks from "rehype-external-links";
 import type { LineElement } from "rehype-pretty-code";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 
-import { ComponentPreview } from "@/components/component-preview";
-import { ComponentSource } from "@/components/component-source";
 import {
   Table,
   TableBody,
@@ -17,9 +16,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Code } from "@/components/ui/typography";
+import { Code, Heading } from "@/components/ui/typography";
 import { cn } from "@/lib/cn";
-import { rehypeComponent } from "@/lib/rehype-component";
 import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
 import { codeImport } from "@/lib/remark-code-import";
 import type { NpmCommands } from "@/types/unist";
@@ -27,9 +25,15 @@ import type { NpmCommands } from "@/types/unist";
 import { CodeBlockCommand } from "./code-block-command";
 import { CodeTabs } from "./code-tabs";
 import { CopyButton } from "./copy-button";
-import { getIconForLanguageExtension } from "./icons";
+import { getIconForLanguageExtension, Icons } from "./icons";
 
 const components: MDXRemoteProps["components"] = {
+  h1: (props: React.ComponentProps<"h1">) => <Heading as="h1" {...props} />,
+  h2: (props: React.ComponentProps<"h2">) => <Heading as="h2" {...props} />,
+  h3: (props: React.ComponentProps<"h3">) => <Heading as="h3" {...props} />,
+  h4: (props: React.ComponentProps<"h4">) => <Heading as="h4" {...props} />,
+  h5: (props: React.ComponentProps<"h5">) => <Heading as="h5" {...props} />,
+  h6: (props: React.ComponentProps<"h6">) => <Heading as="h6" {...props} />,
   table: Table,
   thead: TableHeader,
   tbody: TableBody,
@@ -41,10 +45,7 @@ const components: MDXRemoteProps["components"] = {
 
     return (
       <figure
-        className={cn(
-          hasPrettyCode && "not-prose relative rehype-pretty-code",
-          className,
-        )}
+        className={cn(hasPrettyCode && "not-prose", className)}
         {...props}
       />
     );
@@ -114,8 +115,6 @@ const components: MDXRemoteProps["components"] = {
     );
   },
   code: Code,
-  ComponentPreview,
-  ComponentSource,
   CodeTabs,
   Steps: (props) => (
     <div
@@ -130,6 +129,7 @@ const components: MDXRemoteProps["components"] = {
   TabsList,
   TabsTrigger,
   TabsContent,
+  ShadcnIcon: Icons.shadcn,
 };
 
 const options: MDXRemoteProps["options"] = {
@@ -140,7 +140,7 @@ const options: MDXRemoteProps["options"] = {
         rehypeExternalLinks,
         { target: "_blank", rel: "nofollow noopener noreferrer" },
       ],
-      rehypeComponent,
+      rehypeSlug,
       () => (tree) => {
         visit(tree, (node) => {
           if (node?.type === "element" && node?.tagName === "pre") {

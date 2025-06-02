@@ -10,7 +10,9 @@ updatedAt: 2025-05-20
 <CodeTabs className="gap-0 mt-6">
 
 <TabsList>
-  <TabsTrigger value="shadcn/ui">shadcn/ui</TabsTrigger>
+  <TabsTrigger value="shadcn/ui">
+    <ShadcnIcon /> {`shadcn/ui`}
+  </TabsTrigger>
   <TabsTrigger value="primitives">Primitives</TabsTrigger>
 </TabsList>
 
@@ -62,7 +64,9 @@ The core component that renders a single wheel of options. Each wheel picker con
 <CodeTabs className="gap-0 mt-6">
 
 <TabsList>
-  <TabsTrigger value="shadcn/ui">shadcn/ui</TabsTrigger>
+  <TabsTrigger value="shadcn/ui">
+    <ShadcnIcon /> {`shadcn/ui`}
+  </TabsTrigger>
   <TabsTrigger value="primitives">Primitives</TabsTrigger>
 </TabsList>
 
@@ -172,7 +176,7 @@ export function WheelPickerDemo() {
 
 <TabsContent value="css" className="[&>figure]:mb-0">
 
-```css title="theme.css"
+```css title="styles/theme.css"
 [data-rwp-wrapper] {
   width: 14rem;
   border-radius: 0.375rem;
@@ -234,7 +238,7 @@ export function WheelPickerDemo() {
 
 ## Examples
 
-You can find usage examples in the **Examples** section at: https://chanhdai.com/blog/react-wheel-picker
+You can find usage examples in the **Examples** section at: https://chanhdai.com/blog/react-wheel-picker#examples
 
 ## API Reference
 

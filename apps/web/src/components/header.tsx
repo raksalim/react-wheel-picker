@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background/90 p-4 backdrop-blur-md">
+    <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b bg-background/90 px-4 backdrop-blur-md">
       <Link
         className="flex items-center gap-2 text-lg leading-none font-bold tracking-tight"
         href="/"
@@ -19,7 +19,7 @@ export function Header() {
       </Link>
 
       <div className="flex items-center gap-2">
-        <Button variant="outline" asChild>
+        <Button variant="outline" size="sm" asChild>
           <a href={SOURCE_CODE_GITHUB_URL} target="_blank" rel="noopener">
             <svg viewBox="0 0 438.549 438.549">
               <path
