@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import { CopyButton } from "@/components/copy-button";
+import { InstallationCommand } from "@/components/installation-command";
 import { Mark } from "@/components/mark";
 import { Spotlight } from "@/components/spotlight";
 import { Button } from "@/components/ui/button";
@@ -38,8 +38,6 @@ const featuredItems = [
     title: "Easy installation via shadcn CLI",
   },
 ];
-
-const INSTALLATION_COMMAND = `npx shadcn@latest add https://chanhdai.com/r/wheel-picker.json`;
 
 export default function Home() {
   return (
@@ -75,16 +73,7 @@ export default function Home() {
 
       <div className="mb-12 border-y">
         <div className="mx-auto grid max-w-4xl grid-cols-1 border-dashed sm:grid-cols-2 lg:border-x">
-          <div className="relative order-1 border-b border-dashed text-center font-mono sm:col-span-2">
-            <pre className="hide no-scrollbar overflow-x-auto p-4 text-cyan-600 dark:text-cyan-400">
-              <code>{INSTALLATION_COMMAND}</code>
-            </pre>
-
-            <CopyButton
-              className="absolute top-4 right-4"
-              value={INSTALLATION_COMMAND}
-            />
-          </div>
+          <InstallationCommand className="order-1 border-b border-dashed sm:col-span-2" />
 
           <div className="order-2 border-dashed p-6 sm:order-1 sm:border-r">
             <div className="grid gap-4">
