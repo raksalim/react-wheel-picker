@@ -25,7 +25,7 @@ import type { NpmCommands } from "@/types/unist";
 import { CodeBlockCommand } from "./code-block-command";
 import { CodeTabs } from "./code-tabs";
 import { CopyButton } from "./copy-button";
-import { getIconForLanguageExtension } from "./icons";
+import { getIconForLanguageExtension, Icons } from "./icons";
 
 const components: MDXRemoteProps["components"] = {
   h1: (props: React.ComponentProps<"h1">) => <Heading as="h1" {...props} />,
@@ -129,6 +129,7 @@ const components: MDXRemoteProps["components"] = {
   TabsList,
   TabsTrigger,
   TabsContent,
+  ShadcnIcon: Icons.shadcn,
 };
 
 const options: MDXRemoteProps["options"] = {
