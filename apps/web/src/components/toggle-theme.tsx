@@ -23,7 +23,12 @@ export function ToggleTheme() {
   }, [resolvedTheme, setTheme, setMetaColor]);
 
   return (
-    <Button variant="outline" size="icon" onClick={handleToggle}>
+    <Button
+      className="size-8"
+      variant="outline"
+      size="icon"
+      onClick={handleToggle}
+    >
       {/* <MoonStarIcon className="hidden [html.dark_&]:block" /> */}
       {/* <SunIcon className="hidden [html.light_&]:block" /> */}
 

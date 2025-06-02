@@ -127,17 +127,23 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
+
+  [id] {
+    @apply scroll-mt-24;
+  }
 }
 
-@utility rehype-pretty-code {
-  @apply my-6;
+@layer components {
+  [data-rehype-pretty-code-figure] {
+    @apply relative my-6;
 
-  pre {
-    @apply max-h-[512px] overflow-x-auto rounded-lg bg-zinc-900 py-4;
-  }
+    pre {
+      @apply max-h-[512px] overflow-x-auto rounded-lg bg-zinc-900 py-4;
+    }
 
-  code {
-    @apply font-mono text-sm;
+    code {
+      @apply font-mono text-sm;
+    }
   }
 
   [data-line] {
@@ -148,25 +154,25 @@
     @apply mb-2 px-4 text-sm font-medium;
   }
 
-  code[data-line-numbers] {
+  [data-line-numbers] {
     counter-reset: line;
   }
 
-  code[data-line-numbers] > [data-line]::before {
-    @apply mr-8 inline-block w-3 text-right text-xs text-muted-foreground;
+  [data-line-numbers] > [data-line]::before {
     counter-increment: line;
     content: counter(line);
+    @apply mr-8 inline-block w-3 text-right text-xs text-muted-foreground;
   }
 
-  code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  [data-line-numbers-max-digits="2"] > [data-line]::before {
     @apply w-5;
   }
 
-  code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  [data-line-numbers-max-digits="3"] > [data-line]::before {
     @apply w-7;
   }
 
-  code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  [data-line-numbers-max-digits="4"] > [data-line]::before {
     @apply w-9;
   }
 }

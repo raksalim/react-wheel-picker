@@ -8,13 +8,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { MultiPickerDemo } from "@/components/examples/multi-picker-demo";
+import { SimplePickerDemo } from "@/components/examples/simple-picker-demo";
 import { InstallationCommand } from "@/components/installation-command";
 import { Mark } from "@/components/mark";
 import { Spotlight } from "@/components/spotlight";
 import { Button } from "@/components/ui/button";
-import { MultiPickerDemo } from "@/components/wheel-picker/multi-picker-demo";
-import { SimplePickerDemo } from "@/components/wheel-picker/simple-picker-demo";
-import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 const featuredItems = [
   {
@@ -65,8 +64,12 @@ export default function Home() {
           variant="outline"
           asChild
         >
-          <a href={SOURCE_CODE_GITHUB_URL} target="_blank" rel="noopener">
-            GitHub
+          <a
+            href="https://chanhdai.com/blog/react-wheel-picker#examples"
+            target="_blank"
+            rel="noopener"
+          >
+            Examples
           </a>
         </Button>
       </div>
