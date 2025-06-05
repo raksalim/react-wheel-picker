@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
+import { BrandContextMenu } from "./brand-context-menu";
 import { Mark } from "./mark";
 import { StarsCount } from "./stars-count";
 import { ToggleTheme } from "./toggle-theme";
@@ -10,13 +11,15 @@ import { Button } from "./ui/button";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b bg-background/90 px-4 backdrop-blur-md">
-      <Link
-        className="flex items-center gap-2 text-lg leading-none font-bold tracking-tight"
-        href="/"
-      >
-        <Mark className="size-8" />
-        React Wheel Picker
-      </Link>
+      <BrandContextMenu>
+        <Link
+          className="flex items-center gap-2 text-lg leading-none font-bold tracking-tight"
+          href="/"
+        >
+          <Mark className="size-8" />
+          React Wheel Picker
+        </Link>
+      </BrandContextMenu>
 
       <div className="flex items-center gap-2">
         <Button variant="outline" size="sm" asChild>
