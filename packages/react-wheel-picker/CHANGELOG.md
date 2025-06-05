@@ -1,5 +1,13 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.11
+
+### Patch Changes
+
+- 0e43cff: - docs(README.md): update live demo URL for better accessibilityAdd commentMore actions
+  - docs(README.md): improve documentation link text for clarity
+  - docs(react-wheel-picker/README.md): remove usage section to streamline README and avoid redundancy with documentation
+
 ## 1.0.10
 
 ### Patch Changes
