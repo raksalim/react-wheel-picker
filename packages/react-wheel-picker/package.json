@@ -3,7 +3,8 @@
   "version": "1.0.9",
   "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "type": "commonjs",
   "main": "./dist/index.js",
