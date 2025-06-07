@@ -5,7 +5,7 @@ export type WheelPickerOption = {
   /** The value that will be returned when this option is selected */
   value: string;
   /** The text label displayed for this option */
-  label: string;
+  label: string | JSX.Element;
 };
 
 /**
