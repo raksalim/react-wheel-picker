@@ -66,7 +66,7 @@ export function CodeBlockCommand({
                 <code
                   data-slot="code-block"
                   data-language="bash"
-                  className="px-4 font-mono text-sm leading-none text-cyan-600 dark:text-cyan-400"
+                  className="font-mono text-sm leading-none text-cyan-600 dark:text-cyan-400"
                 >
                   {value}
                 </code>
